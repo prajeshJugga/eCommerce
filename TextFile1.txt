@@ -1,0 +1,8 @@
+dotnet ef migrations add InitialCreate --project .\eCommerceDatabase\
+dotnet ef migrations remove  --project .\eCommerceDatabase\
+
+dotnet ef database update --project .\eCommerceDatabase\
+
+dotnet ef database update --startup-project .\eCommerceApi\ --project .\eCommerceDatabase\
+
+dotnet ef migrations add AddedBundleTables --startup-project .\eCommerceApi\ --project .\eCommerceDatabase\
